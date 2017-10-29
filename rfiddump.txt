@@ -1,0 +1,91 @@
+/*
+SQLyog Ultimate v9.60 
+MySQL - 5.1.59-community : Database - rfid_tool
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`rfid_tool` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `rfid_tool`;
+
+/*Table structure for table `location` */
+
+DROP TABLE IF EXISTS `location`;
+
+CREATE TABLE `location` (
+  `regoffice` varchar(50) DEFAULT NULL,
+  `VV` varchar(50) DEFAULT NULL,
+  `VC` varchar(50) DEFAULT NULL,
+  `LIB` varchar(50) DEFAULT NULL,
+  `TIFAC` varchar(50) DEFAULT NULL,
+  `JVC` varchar(50) DEFAULT NULL,
+  `VKJ` varchar(50) DEFAULT NULL,
+  `NMV` varchar(50) DEFAULT NULL,
+  `ASK` varchar(50) DEFAULT NULL,
+  `DEAN_PD` varchar(50) DEFAULT NULL,
+  `FO` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `location` */
+
+/*Table structure for table `login` */
+
+DROP TABLE IF EXISTS `login`;
+
+CREATE TABLE `login` (
+  `sno` int(10) DEFAULT NULL,
+  `uname` varchar(25) DEFAULT NULL,
+  `pass` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `login` */
+
+insert  into `login`(`sno`,`uname`,`pass`) values (1,'ab','ab'),(2,'bc','bc');
+
+/*Table structure for table `tbl_codes` */
+
+DROP TABLE IF EXISTS `tbl_codes`;
+
+CREATE TABLE `tbl_codes` (
+  `sno` int(100) NOT NULL,
+  `Name` varchar(50) DEFAULT NULL,
+  `code` varchar(50) DEFAULT NULL,
+  `Acc_Date` varchar(200) DEFAULT NULL,
+  `Mod_Date` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`sno`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_codes` */
+
+insert  into `tbl_codes`(`sno`,`Name`,`code`,`Acc_Date`,`Mod_Date`) values (1,'demo1.txt','1234567890','5-9-2014, 6-9-2014, 7-9-2014, 13-9-2014','14-9-2014'),(2,'tde.txt','0987654321','5-9-2014, 6-9-2014, 7-9-2014, 13-9-2014','15-9-2014');
+
+/*Table structure for table `tbl_location` */
+
+DROP TABLE IF EXISTS `tbl_location`;
+
+CREATE TABLE `tbl_location` (
+  `Sno` int(100) NOT NULL,
+  `filename` varchar(100) DEFAULT NULL,
+  `ori_loc` varchar(50) DEFAULT NULL,
+  `curr_loc` varchar(50) DEFAULT NULL,
+  `date-time` varchar(50) DEFAULT NULL,
+  `code` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Sno`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_location` */
+
+insert  into `tbl_location`(`Sno`,`filename`,`ori_loc`,`curr_loc`,`date-time`,`code`) values (1,'demo1.txt','VV','CV','11-10-2014 7.00 AM','1234567890'),(2,'demo2.txt','GV','CV','11-10-2014 7.00 AM','1234567890'),(3,'demo3.txt','VKJ','VV','11-10-2014 7.00 AM','1234567890'),(4,'demo4.txt','JVC','VKJ','11-10-2014 7.00 AM','0987654321'),(5,'demo5.txt','JVC','ASK','11-10-2014 7.00 AM','0987654321');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
