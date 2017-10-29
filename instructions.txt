@@ -1,0 +1,23 @@
+install java in the location
+C:\Program Files (x86)\
+
+paste the folder 'ext' in the location
+C:\Program Files (x86)\Java\jdk1.6.0\jre\lib
+
+install mysql database
+install sql yog (IDE) for accessing mysql database graphically
+
+execute the dump 'rfiddump.txt' for database
+
+place the folder 'AMS' in d:
+
+open the folder AMS
+click on the file run.bat
+
+
+
+
+
+
+
+
